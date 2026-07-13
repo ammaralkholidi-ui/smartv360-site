@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الأسعار — SmartV360</title>
+<meta name="description" content="باقات SmartV360: أساسية 140 ريال، احترافية 249 ريال، متقدمة 400 ريال شهرياً — وتجربة مجانية 14 يوماً بكل المزايا بلا بطاقة ائتمانية.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --navy:#0b1f4d; --gold:#f5b73d; --gold2:#e8a416; --ink:#0f172a; --mut:#5b6b8c; --line:#e7ecf6; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'IBM Plex Sans Arabic',Tahoma,sans-serif; color:var(--ink); background:#f6f8fc; line-height:1.6; }
+  a { text-decoration:none; color:inherit; }
+  .c { max-width:1180px; margin:0 auto; padding:0 24px; }
+  svg { stroke-linecap:round; stroke-linejoin:round; fill:none; }
+
+  .beta { background:#0a1a40; color:#f5c96a; font-size:12px; text-align:center; padding:8px 14px; }
+  .beta a { color:#f5c96a; text-decoration:underline; }
+
+  header { background:var(--navy); position:sticky; top:0; z-index:20; }
+  .nav { display:flex; align-items:center; justify-content:space-between; padding:14px 0; gap:12px; flex-wrap:wrap; }
+  .logo { display:flex; align-items:center; gap:9px; color:#fff; font-weight:700; font-size:20px; }
+  .logo b { color:var(--gold); }
+  .logo .m { width:34px; height:34px; border-radius:10px; background:linear-gradient(135deg,var(--gold),#d98f0a); display:flex; align-items:center; justify-content:center; }
+  .logo .m svg { width:19px; height:19px; stroke:#0b1f4d; stroke-width:2.2; }
+  .menu { display:flex; gap:24px; font-size:13.5px; color:#c6d2ee; flex-wrap:wrap; }
+  .menu a:hover { color:#fff; }
+  .menu a.on { color:#fff; font-weight:600; border-bottom:2px solid var(--gold); padding-bottom:4px; }
+  .navbtns { display:flex; gap:10px; }
+  .ghost { border:1px solid #3c4f8a; color:#dbe4fb; font-size:13px; padding:9px 18px; border-radius:9px; }
+  .solid { background:var(--gold); color:#3a2604; font-size:13px; font-weight:700; padding:9px 18px; border-radius:9px; }
+
+  .phead { background:var(--navy); color:#fff; text-align:center; padding:44px 20px 84px; }
+  .phead h1 { font-size:clamp(26px,4vw,36px); font-weight:700; }
+  .phead h1 .g { color:var(--gold); }
+  .phead p { color:#b9c7e8; font-size:14px; margin-top:8px; }
+
+  .plans { display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:18px; align-items:stretch; margin-top:-52px; position:relative; z-index:2; }
+  .plan { background:#fff; border:1px solid var(--line); border-radius:16px; padding:24px; display:flex; flex-direction:column; box-shadow:0 14px 34px rgba(11,31,77,.08); }
+  .plan.feat { border:2px solid var(--navy); box-shadow:0 20px 46px rgba(11,31,77,.16); position:relative; }
+  .plan.feat .ptag { position:absolute; top:-13px; right:20px; background:var(--gold); color:#3a2604; font-size:11px; font-weight:700; padding:3px 14px; border-radius:999px; }
+  .plan h3 { font-size:18px; color:var(--navy); margin-bottom:4px; }
+  .plan .price { font-size:32px; font-weight:700; }
+  .plan .price small { font-size:13px; color:var(--mut); font-weight:400; }
+  .plan .old { font-size:15px; color:#94a3b8; text-decoration:line-through; font-weight:400; margin-left:6px; }
+  .plan .yr { font-size:12.5px; color:#16a34a; font-weight:600; margin-bottom:14px; }
+  .plan .yr .old { font-size:12px; }
+  .yonly { display:inline-block; background:#eef3ff; color:#1e3a8a; font-size:11px; font-weight:700; padding:3px 12px; border-radius:999px; margin-bottom:6px; }
+  .disc-banner { text-align:center; margin:-30px auto 22px; position:relative; z-index:3; }
+  .disc-banner span { display:inline-block; background:#fee2e2; border:1px solid #fecaca; color:#b91c1c; font-size:13.5px; font-weight:700; padding:8px 22px; border-radius:999px; }
+  .plan ul { list-style:none; flex:1; margin-bottom:16px; }
+  .plan li { font-size:12.5px; color:#334155; padding:5px 0; border-bottom:1px dashed #f1f5f9; }
+  .plan li::before { content:'✓ '; color:#16a34a; font-weight:700; }
+  .plan li.no::before { content:'✗ '; color:#cbd5e1; }
+  .plan li.no { color:#94a3b8; }
+  .plan .pbtn { display:block; text-align:center; background:var(--navy); color:#fff; font-weight:700; padding:12px; border-radius:10px; font-size:13.5px; }
+  .plan.feat .pbtn { background:linear-gradient(135deg,var(--gold),var(--gold2)); color:#3a2604; }
+  .vat { text-align:center; color:var(--mut); font-size:12px; margin-top:18px; }
+
+  .trialbox { background:#fffbeb; border:1px solid #fcd34d; border-radius:16px; padding:24px; margin:24px 0; text-align:center; }
+  .trialbox b { color:#92400e; font-size:16px; }
+  .trialbox p { color:#a16207; font-size:13px; margin-top:6px; line-height:1.8; }
+
+  .faq { padding:34px 0 10px; }
+  .faq h2 { text-align:center; font-size:22px; font-weight:700; margin-bottom:22px; }
+  .faq h2 .g { color:#1e3a8a; }
+  .qa { background:#fff; border:1px solid var(--line); border-radius:12px; padding:16px 18px; margin-bottom:10px; }
+  .qa b { font-size:13.5px; display:block; margin-bottom:4px; }
+  .qa p { font-size:12.5px; color:var(--mut); line-height:1.8; }
+
+  .cta-band { background:linear-gradient(120deg,#122a63,#0b1f4d); border-radius:22px; color:#fff; padding:34px; display:flex; justify-content:space-between; align-items:center; gap:24px; margin:36px 0 56px; flex-wrap:wrap; }
+  .cta-band h2 { font-size:21px; font-weight:700; margin-bottom:4px; }
+  .cta-band .y { color:var(--gold); }
+  .cta-band p { color:#b9c7e8; font-size:13px; }
+  .cta { display:inline-block; background:linear-gradient(135deg,var(--gold),var(--gold2)); color:#3a2604; font-size:15px; font-weight:700; padding:14px 28px; border-radius:11px; box-shadow:0 10px 26px rgba(245,183,61,.35); }
+
+  footer { background:#0a1a40; color:#8fa2cf; padding:26px 0 20px; font-size:12px; text-align:center; }
+  footer a { color:#8fa2cf; }
+  footer a:hover { color:#f5c96a; }
+</style>
+</head>
+<body>
+
+<div class="beta">⚠️ نسخة تجريبية تحت التطوير — بعض الخدمات تُضاف تباعاً · <a href="terms.html">التفاصيل في الشروط</a></div>
+
+<header>
+  <div class="c nav">
+    <a class="logo" href="index.html"><span class="m"><svg viewBox="0 0 24 24"><path d="M3 9l9-6 9 6v11a1 1 0 01-1 1H4a1 1 0 01-1-1z"/><path d="M9 21v-6h6v6"/></svg></span>Smart<b>V360</b></a>
+    <nav class="menu"><a href="index.html#features">المميزات</a><a href="index.html#how">كيف تعمل</a><a class="on" href="pricing.html">الأسعار</a><a href="index.html#contact">الدعم</a></nav>
+    <div class="navbtns"><a class="ghost" href="mailto:support@smartv360.com">تسجيل الدخول</a><a class="solid" href="mailto:support@smartv360.com?subject=اشتراك SmartV360">ابدأ مجاناً</a></div>
+  </div>
+</header>
+
+<div class="phead">
+  <h1>باقات <span class="g">بسيطة وواضحة</span></h1>
+  <p>ادفع شهرياً أو وفّر مع الاشتراك السنوي — والبداية دائماً تجربة مجانية 14 يوماً</p>
+</div>
+
+<div class="c">
+  <div class="disc-banner"><span>🔥 خصم إطلاق 20% على جميع الباقات — لفترة محدودة</span></div>
+  <div class="plans" style="margin-top:0">
+    <div class="plan">
+      <span class="yonly">اشتراك سنوي فقط</span>
+      <h3>أساسية</h3>
+      <div class="price">799 <small>ريال / سنوياً</small> <span class="old">999</span></div>
+      <div class="yr">أي ما يعادل ~67 ريالاً شهرياً</div>
+      <ul>
+        <li>3 مستخدمين</li>
+        <li>فروع ومخازن وأصناف وفواتير بلا حدود</li>
+        <li>فواتير ZATCA والطباعة</li>
+        <li>تعدد العملات</li>
+        <li>نظام الطلبات والتنسيق + رحلات الشراء</li>
+        <li>2,800 مسح ذكاء اصطناعي سنوياً — متاحة كاملة من اليوم الأول</li>
+        <li>10 GB للصور والمرفقات</li>
+        <li>دعم بالبريد والواتساب</li>
+        <li class="no">التقارير المتقدمة</li>
+      </ul>
+      <a class="pbtn" href="mailto:support@smartv360.com?subject=اشتراك أساسية">اشترك الآن</a>
+    </div>
+    <div class="plan feat">
+      <span class="ptag">الأكثر طلباً</span>
+      <h3>احترافية</h3>
+      <div class="price">199 <small>ريال / شهرياً</small> <span class="old">249</span></div>
+      <div class="yr">أو 1,599 ريال سنوياً <span class="old">1,999</span></div>
+      <ul>
+        <li>8 مستخدمين</li>
+        <li>فروع ومخازن وأصناف وفواتير بلا حدود</li>
+        <li>فواتير ZATCA والطباعة</li>
+        <li>تعدد العملات</li>
+        <li>نظام الطلبات والتنسيق + رحلات الشراء</li>
+        <li>شهري: 700 مسح AI شهرياً · سنوي: 7,000 مسح متاحة كاملة</li>
+        <li>20 GB للصور والمرفقات</li>
+        <li>دعم بالبريد والواتساب</li>
+        <li>التقارير المتقدمة</li>
+      </ul>
+      <a class="pbtn" href="mailto:support@smartv360.com?subject=اشتراك احترافية">اشترك الآن</a>
+    </div>
+    <div class="plan">
+      <h3>متقدمة</h3>
+      <div class="price">320 <small>ريال / شهرياً</small> <span class="old">400</span></div>
+      <div class="yr">أو 3,199 ريال سنوياً <span class="old">3,999</span></div>
+      <ul>
+        <li>مستخدمون بلا حدود</li>
+        <li>فروع ومخازن وأصناف وفواتير بلا حدود</li>
+        <li>فواتير ZATCA والطباعة</li>
+        <li>تعدد العملات</li>
+        <li>نظام الطلبات والتنسيق + رحلات الشراء</li>
+        <li>شهري: 5,000 مسح AI شهرياً · سنوي: 30,000 مسح متاحة كاملة</li>
+        <li>50 GB للصور والمرفقات</li>
+        <li>دعم بأولوية + هاتف</li>
+        <li>التقارير المتقدمة</li>
+      </ul>
+      <a class="pbtn" href="mailto:support@smartv360.com?subject=اشتراك متقدمة">اشترك الآن</a>
+    </div>
+  </div>
+  <p class="vat">الأسعار بالريال السعودي ولا تشمل ضريبة القيمة المضافة 15%. الخصم عرض إطلاق لفترة محدودة.</p>
+
+  <div class="trialbox">
+    <b>🎁 جرّب كل شيء مجاناً لمدة 14 يوماً</b>
+    <p>كل المزايا مفتوحة خلال التجربة (بحدود استخدام معقولة) — بلا بطاقة ائتمانية، وبياناتك تبقى محفوظة حتى لو لم تشترك.<br>التجربة المجانية متاحة مرة واحدة لكل منشأة (بالسجل التجاري / الرقم الضريبي).</p>
+  </div>
+
+  <div class="faq">
+    <h2>أسئلة <span class="g">شائعة</span></h2>
+    <div class="qa"><b>ماذا يحدث بعد انتهاء التجربة أو الاشتراك؟</b><p>يتحول حسابك إلى وضع القراءة فقط — بياناتك تبقى محفوظة بالكامل ولا تُحذف أبداً، وتعود كما كانت فور التفعيل.</p></div>
+    <div class="qa"><b>كيف أدفع وأفعّل الاشتراك؟</b><p>راسلنا على support@smartv360.com وسنرسل لك تفاصيل الدفع، ويُفعَّل اشتراكك فور الإتمام.</p></div>
+    <div class="qa"><b>هل يمكنني تغيير الباقة لاحقاً؟</b><p>نعم — الترقية أو التغيير متاح في أي وقت بالتواصل معنا.</p></div>
+    <div class="qa"><b>هل تدعمون الربط مع منصة فاتورة (هيئة الزكاة)؟</b><p>النظام يدعم طباعة الفاتورة الضريبية برمز QR المتوافق، أما الربط الإلكتروني المباشر مع المنصة بجميع مراحله فغير جاهز حالياً وقيد التطوير.</p></div>
+  </div>
+
+  <div class="cta-band">
+    <div>
+      <h2>جاهز <span class="y">تبدأ؟</span></h2>
+      <p>ابدأ تجربتك المجانية اليوم أو راسلنا لأي استفسار</p>
+    </div>
+    <a class="cta" href="mailto:support@smartv360.com?subject=اشتراك SmartV360">📧 support@smartv360.com</a>
+  </div>
+</div>
+
+<footer>
+  <div class="c">
+    <a href="index.html">الرئيسية</a> · <a href="terms.html">الشروط والأحكام</a> · <a href="privacy.html">سياسة الخصوصية</a> · <a href="mailto:support@smartv360.com">الدعم</a>
+    <div style="margin-top:8px;color:#5f74a8">© 2026 SmartV360 — جميع الحقوق محفوظة · نسخة تجريبية تحت التطوير</div>
+  </div>
+</footer>
+
+</body>
+</html>

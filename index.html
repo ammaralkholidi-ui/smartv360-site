@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmartV360 — منصة ذكية للمشتريات والمبيعات والمخزون</title>
+<meta name="description" content="SmartV360: منصة سحابية للمستوردين وتجار الجملة — فواتير ضريبية بQR متوافقة مع هيئة الزكاة، مطابقة الأصناف بالصور بالذكاء الاصطناعي، رحلات الشراء، تقارير مراقبة تكلفة الشراء. تجربة مجانية 14 يوماً.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230b1f4d'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='%23f5b73d' font-family='Arial' font-weight='bold'%3EV%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --navy:#0b1f4d; --navy2:#122a63; --gold:#f5b73d; --gold2:#e8a416; --ink:#0f172a; --mut:#5b6b8c; --line:#e7ecf6; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'IBM Plex Sans Arabic',Tahoma,sans-serif; color:var(--ink); background:#fff; line-height:1.6; }
+  a { text-decoration:none; color:inherit; }
+  .c { max-width:1180px; margin:0 auto; padding:0 24px; }
+  svg { stroke-linecap:round; stroke-linejoin:round; fill:none; }
+
+  .beta { background:#0a1a40; color:#f5c96a; font-size:12px; text-align:center; padding:8px 14px; }
+  .beta a { color:#f5c96a; text-decoration:underline; }
+
+  header { background:var(--navy); position:sticky; top:0; z-index:20; }
+  .nav { display:flex; align-items:center; justify-content:space-between; padding:14px 0; gap:12px; flex-wrap:wrap; }
+  .logo { display:flex; align-items:center; gap:9px; color:#fff; font-weight:700; font-size:20px; }
+  .logo b { color:var(--gold); }
+  .logo .m { width:34px; height:34px; border-radius:10px; background:linear-gradient(135deg,var(--gold),#d98f0a); display:flex; align-items:center; justify-content:center; }
+  .logo .m svg { width:19px; height:19px; stroke:#0b1f4d; stroke-width:2.2; }
+  .menu { display:flex; gap:24px; font-size:13.5px; color:#c6d2ee; flex-wrap:wrap; }
+  .menu a:hover { color:#fff; }
+  .navbtns { display:flex; gap:10px; }
+  .ghost { border:1px solid #3c4f8a; color:#dbe4fb; font-size:13px; padding:9px 18px; border-radius:9px; }
+  .solid { background:var(--gold); color:#3a2604; font-size:13px; font-weight:700; padding:9px 18px; border-radius:9px; }
+
+  .hero { background:radial-gradient(900px 420px at 15% -20%, #24418f 0%, transparent 55%), radial-gradient(700px 380px at 95% 115%, #1a3377aa 0%, transparent 50%), var(--navy); padding:54px 0 76px; color:#fff; overflow:hidden; }
+  .hgrid { display:grid; grid-template-columns:1.05fr 1fr; gap:44px; align-items:center; }
+  @media (max-width: 900px) { .hgrid { grid-template-columns:1fr; } }
+  .chip { display:inline-flex; align-items:center; gap:7px; background:rgba(245,183,61,.12); border:1px solid rgba(245,183,61,.35); color:#f8d488; font-size:12.5px; padding:7px 15px; border-radius:999px; margin-bottom:18px; }
+  h1 { font-size:clamp(30px,4.5vw,44px); line-height:1.4; font-weight:700; }
+  h1 .g { color:var(--gold); }
+  .hsub { color:#b9c7e8; font-size:15.5px; line-height:1.9; margin:16px 0 26px; max-width:480px; }
+  .hbtns { display:flex; gap:12px; margin-bottom:26px; flex-wrap:wrap; }
+  .cta { display:inline-block; background:linear-gradient(135deg,var(--gold),var(--gold2)); color:#3a2604; font-size:15px; font-weight:700; padding:14px 28px; border-radius:11px; box-shadow:0 10px 26px rgba(245,183,61,.35); }
+  .cta2 { display:inline-block; border:1.5px solid #40538f; color:#dce5fb; font-size:14px; padding:13px 24px; border-radius:11px; }
+  .hmini { display:flex; gap:24px; color:#9fb0d9; font-size:12.5px; flex-wrap:wrap; }
+  .hmini span { display:inline-flex; align-items:center; gap:6px; }
+  .hmini svg { width:15px; height:15px; stroke:var(--gold); stroke-width:2; }
+
+  .shot { background:#fff; border-radius:18px; overflow:hidden; box-shadow:0 30px 70px rgba(0,0,0,.45); display:grid; grid-template-columns:150px 1fr; min-height:390px; }
+  @media (max-width: 560px) { .shot { grid-template-columns:1fr; } .sb { display:none; } }
+  .sb { background:#0e2456; padding:14px 10px; color:#93a7d8; font-size:11px; }
+  .sb .t { color:#fff; font-weight:700; font-size:12.5px; margin-bottom:14px; padding-right:6px; }
+  .sb div.i { padding:8px 10px; border-radius:8px; margin-bottom:2px; }
+  .sb div.i.on { background:#1d3a7e; color:#fff; }
+  .main { padding:14px; background:#f7f9fd; }
+  .mtop { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; }
+  .mtop b { font-size:13px; color:var(--ink); }
+  .mtop span { font-size:10.5px; color:var(--mut); }
+  .kpis { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-bottom:10px; }
+  .kpi { background:#fff; border:1px solid var(--line); border-radius:10px; padding:9px; }
+  .kpi span { font-size:9.5px; color:var(--mut); display:block; }
+  .kpi b { font-size:14px; color:var(--ink); }
+  .kpi i { font-style:normal; font-size:9px; color:#16a34a; }
+  .midrow { display:grid; grid-template-columns:1.6fr 1fr; gap:8px; margin-bottom:10px; }
+  .panel { background:#fff; border:1px solid var(--line); border-radius:10px; padding:10px; }
+  .panel .pt { font-size:10px; color:var(--mut); margin-bottom:6px; }
+  .bars { display:flex; align-items:flex-end; gap:6px; height:74px; }
+  .bars i { flex:1; background:linear-gradient(180deg,#3f68d4,#1e3a8a); border-radius:4px 4px 0 0; }
+  .donut { width:74px; height:74px; border-radius:50%; margin:0 auto; background:conic-gradient(#1e3a8a 0 46%, #f5b73d 46% 71%, #7c9bee 71% 88%, #e2e8f0 88% 100%); position:relative; }
+  .donut::after { content:''; position:absolute; inset:19px; background:#fff; border-radius:50%; }
+  .rows .r { display:flex; justify-content:space-between; align-items:center; font-size:10.5px; padding:7px 4px; border-top:1px solid #f1f5fb; gap:6px; }
+  .rows .r:first-child { border-top:none; }
+  .rows .n b { font-size:10.5px; display:block; color:var(--ink); }
+  .rows .n span { font-size:9px; color:var(--mut); }
+  .pill { font-size:8.5px; font-weight:700; padding:2.5px 9px; border-radius:999px; white-space:nowrap; }
+  .pg { background:#e8f8ef; color:#137a44; } .pb { background:#e9f0ff; color:#2450b8; } .py { background:#fdf3d9; color:#946508; }
+
+  .facts { margin-top:-38px; position:relative; z-index:3; }
+  .facts .in { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px; background:#fff; border:1px solid var(--line); border-radius:16px; padding:20px; box-shadow:0 20px 45px rgba(11,31,77,.10); }
+  .fact { display:flex; gap:12px; align-items:center; }
+  .fact .ic { width:44px; height:44px; border-radius:12px; background:#eef3ff; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .fact .ic svg { width:21px; height:21px; stroke:#1e3a8a; stroke-width:1.8; }
+  .fact b { font-size:13.5px; display:block; }
+  .fact span { font-size:11px; color:var(--mut); }
+
+  section { padding:64px 0 10px; }
+  .st { text-align:center; font-size:26px; font-weight:700; }
+  .st .g { color:#1e3a8a; }
+  .ss { text-align:center; color:var(--mut); font-size:13.5px; margin:8px 0 34px; }
+
+  .grid8 { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:14px; }
+  .f8 { background:#fff; border:1px solid var(--line); border-radius:14px; padding:18px 16px; transition:.2s; }
+  .f8:hover { box-shadow:0 14px 30px rgba(11,31,77,.10); transform:translateY(-2px); }
+  .f8 .ic { width:42px; height:42px; border-radius:11px; background:#f2f6ff; display:flex; align-items:center; justify-content:center; margin-bottom:12px; }
+  .f8 .ic svg { width:20px; height:20px; stroke:#1e3a8a; stroke-width:1.8; }
+  .f8 b { font-size:14px; display:block; margin-bottom:5px; }
+  .f8 p { font-size:11.5px; color:var(--mut); line-height:1.75; }
+
+  .steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:10px; margin-top:8px; }
+  .step { text-align:center; padding:10px; }
+  .step .n { width:46px; height:46px; border-radius:50%; background:var(--navy); color:var(--gold); font-weight:700; display:flex; align-items:center; justify-content:center; margin:0 auto 10px; font-size:15px; }
+  .step b { font-size:13px; display:block; margin-bottom:3px; }
+  .step p { font-size:10.5px; color:var(--mut); line-height:1.7; }
+
+  .ai { background:radial-gradient(700px 300px at 85% 0%, #223f8c 0%, transparent 55%), var(--navy); border-radius:22px; color:#fff; padding:40px 34px; margin-top:56px; }
+  .ai .head { text-align:center; margin-bottom:26px; }
+  .ai .head .tag { background:var(--gold); color:#3a2604; font-size:11px; font-weight:700; padding:4px 14px; border-radius:999px; }
+  .ai h2 { font-size:24px; font-weight:700; margin-top:12px; }
+  .ai .head p { color:#b9c7e8; font-size:13px; margin-top:6px; }
+  .aigrid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px; }
+  .aic { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:14px; padding:18px; }
+  .aic .ic { width:42px; height:42px; border-radius:11px; background:rgba(245,183,61,.15); display:flex; align-items:center; justify-content:center; margin-bottom:12px; }
+  .aic .ic svg { width:20px; height:20px; stroke:var(--gold); stroke-width:1.8; }
+  .aic b { font-size:14.5px; display:block; margin-bottom:5px; }
+  .aic p { font-size:11.5px; color:#b9c7e8; line-height:1.8; }
+
+  .trip { display:grid; grid-template-columns:1fr 1fr; gap:38px; align-items:center; margin-top:56px; }
+  @media (max-width: 800px) { .trip { grid-template-columns:1fr; } }
+  .trip h2 { font-size:24px; font-weight:700; line-height:1.6; }
+  .trip h2 .g { color:#1e3a8a; }
+  .trip p.d { color:var(--mut); font-size:13.5px; line-height:1.9; margin:12px 0 18px; }
+  .trip ul { list-style:none; }
+  .trip li { font-size:13px; padding:7px 0; display:flex; gap:10px; align-items:flex-start; color:#334155; }
+  .trip li svg { width:17px; height:17px; stroke:#16a34a; stroke-width:2.2; flex-shrink:0; margin-top:2px; }
+  .tripcard { background:#0e2456; border-radius:18px; padding:18px; color:#fff; box-shadow:0 24px 50px rgba(11,31,77,.28); }
+  .tc-top { display:flex; justify-content:space-between; font-size:11px; color:#9fb0d9; margin-bottom:12px; flex-wrap:wrap; gap:4px; }
+  .tphoto { background:#16306e; border:1px dashed #3d5aa8; border-radius:12px; height:104px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; color:#9fb0d9; font-size:11px; margin-bottom:12px; }
+  .tphoto svg { width:26px; height:26px; stroke:var(--gold); stroke-width:1.6; }
+  .match { background:#fff; color:var(--ink); border-radius:12px; padding:11px; display:flex; gap:10px; align-items:center; }
+  .match .thumb { width:42px; height:42px; border-radius:9px; background:linear-gradient(135deg,#e2e8f0,#cbd5e1); flex-shrink:0; }
+  .match b { font-size:11.5px; display:block; }
+  .match span { font-size:9.5px; color:var(--mut); }
+  .match .pct { margin-right:auto; background:#e8f8ef; color:#137a44; font-weight:700; font-size:11px; padding:5px 11px; border-radius:999px; white-space:nowrap; }
+
+  /* الأسعار */
+  .plans { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px; align-items:stretch; }
+  .plan { background:#fff; border:1px solid var(--line); border-radius:16px; padding:24px; display:flex; flex-direction:column; }
+  .plan.feat { border:2px solid var(--navy); box-shadow:0 16px 40px rgba(11,31,77,.14); position:relative; }
+  .plan.feat .ptag { position:absolute; top:-13px; right:20px; background:var(--gold); color:#3a2604; font-size:11px; font-weight:700; padding:3px 14px; border-radius:999px; }
+  .plan h3 { font-size:18px; color:var(--navy); margin-bottom:4px; }
+  .plan .price { font-size:32px; font-weight:700; }
+  .plan .price small { font-size:13px; color:var(--mut); font-weight:400; }
+  .plan .yr { font-size:12.5px; color:#16a34a; font-weight:600; margin-bottom:14px; }
+  .plan ul { list-style:none; flex:1; margin-bottom:16px; }
+  .plan li { font-size:12.5px; color:#334155; padding:5px 0; border-bottom:1px dashed #f1f5f9; }
+  .plan li::before { content:'✓ '; color:#16a34a; font-weight:700; }
+  .plan li.no::before { content:'✗ '; color:#cbd5e1; }
+  .plan li.no { color:#94a3b8; }
+  .plan .pbtn { display:block; text-align:center; background:var(--navy); color:#fff; font-weight:700; padding:12px; border-radius:10px; font-size:13.5px; }
+  .vat { text-align:center; color:var(--mut); font-size:12px; margin-top:16px; }
+  .trialbox { background:#fffbeb; border:1px solid #fcd34d; border-radius:14px; padding:20px; margin-top:22px; text-align:center; }
+  .trialbox b { color:#92400e; font-size:15px; }
+  .trialbox p { color:#a16207; font-size:12.5px; margin-top:4px; }
+
+  .cta-band { background:linear-gradient(120deg,#122a63,#0b1f4d); border-radius:22px; color:#fff; padding:38px; display:flex; justify-content:space-between; align-items:center; gap:24px; margin:60px 0 66px; flex-wrap:wrap; }
+  .cta-band h2 { font-size:23px; font-weight:700; margin-bottom:6px; }
+  .cta-band .y { color:var(--gold); }
+  .cta-band p { color:#b9c7e8; font-size:13px; }
+  .cta-band ul { list-style:none; margin-top:12px; display:flex; gap:18px; color:#d5def5; font-size:12px; flex-wrap:wrap; }
+  .cta-band li { display:flex; align-items:center; gap:6px; }
+  .cta-band li svg { width:14px; height:14px; stroke:var(--gold); stroke-width:2.2; }
+
+  footer { background:#0a1a40; color:#8fa2cf; padding:34px 0 22px; font-size:12px; }
+  .fg { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:26px; margin-bottom:22px; }
+  .fg b { color:#fff; font-size:13px; display:block; margin-bottom:10px; }
+  .fg a { display:block; padding:3px 0; color:#8fa2cf; }
+  .fg a:hover { color:#f5c96a; }
+  .fcopy { border-top:1px solid #1c2f63; padding-top:14px; text-align:center; color:#5f74a8; }
+</style>
+</head>
+<body>
+
+<div class="beta">⚠️ نسخة تجريبية تحت التطوير — بعض الخدمات تُضاف تباعاً · <a href="terms.html">التفاصيل في الشروط</a></div>
+
+<header>
+  <div class="c nav">
+    <a class="logo" href="#"><span class="m"><svg viewBox="0 0 24 24"><path d="M3 9l9-6 9 6v11a1 1 0 01-1 1H4a1 1 0 01-1-1z"/><path d="M9 21v-6h6v6"/></svg></span>Smart<b>V360</b></a>
+    <nav class="menu"><a href="#features">المميزات</a><a href="#how">كيف تعمل</a><a href="pricing.html">الأسعار</a><a href="#contact">الدعم</a></nav>
+    <div class="navbtns"><a class="ghost" href="https://app.smartv360.com">تسجيل الدخول</a><a class="solid" href="https://app.smartv360.com">ابدأ مجاناً</a></div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="c hgrid">
+    <div>
+      <span class="chip">✦ منصة ذكية للمشتريات والمبيعات والمخزون</span>
+      <h1>ارتقِ بإدارة تجارتك<br>في <span class="g">منصة واحدة</span></h1>
+      <p class="hsub">من رحلة الشراء عند المورد حتى الفاتورة الضريبية — وثّق بالصور، طابق أصنافك بالذكاء الاصطناعي، وراقب تكلفة الشراء أولاً بأول.</p>
+      <div class="hbtns"><a class="cta" href="pricing.html">ابدأ التجربة المجانية — 14 يوماً</a><a class="cta2" href="mailto:support@smartv360.com">تواصل معنا</a></div>
+      <div class="hmini">
+        <span><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>بلا بطاقة ائتمان</span>
+        <span><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>إعداد في دقائق</span>
+        <span><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>دعم عربي</span>
+      </div>
+    </div>
+    <div class="shot">
+      <div class="sb">
+        <div class="t">⌂ SmartV360</div>
+        <div class="i on">▦ لوحة التحكم</div>
+        <div class="i">🗎 فواتير المبيعات</div>
+        <div class="i">🛒 المشتريات</div>
+        <div class="i">▤ المخزون</div>
+        <div class="i">✈ رحلات الشراء</div>
+        <div class="i">📷 مطابقة بالصور</div>
+        <div class="i">📊 التقارير</div>
+      </div>
+      <div class="main">
+        <div class="mtop"><b>لوحة التحكم</b><span>آخر 30 يوماً ▾</span></div>
+        <div class="kpis">
+          <div class="kpi"><span>مبيعات الشهر</span><b>184,320</b> <i>+12%</i></div>
+          <div class="kpi"><span>مشتريات الشهر</span><b>¥ 96,400</b></div>
+          <div class="kpi"><span>أصناف نشطة</span><b>2,350</b></div>
+          <div class="kpi"><span>تحت الحد الأدنى</span><b>17</b></div>
+        </div>
+        <div class="midrow">
+          <div class="panel"><div class="pt">اتجاه المبيعات</div><div class="bars"><i style="height:34%"></i><i style="height:52%"></i><i style="height:41%"></i><i style="height:66%"></i><i style="height:58%"></i><i style="height:78%"></i><i style="height:90%"></i></div></div>
+          <div class="panel"><div class="pt">توزيع التكلفة</div><div class="donut"></div></div>
+        </div>
+        <div class="panel rows">
+          <div class="r"><div class="n"><b>SINV-000341 · فاتورة مبيعات</b><span>عميل نقدي · اليوم</span></div><span class="pill pg">مدفوعة</span><b>2,012.50</b></div>
+          <div class="r"><div class="n"><b>PINV-000128 · مشتريات</b><span>مورد خارجي · أمس</span></div><span class="pill pb">آجلة</span><b>¥ 18,940</b></div>
+          <div class="r"><div class="n"><b>ITEM-001 · مطابقة صورة</b><span>رحلة شراء — معرض الجملة</span></div><span class="pill py">تطابق 92%</span><b>📷</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="facts">
+  <div class="c"><div class="in">
+    <div class="fact"><div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 8h3v3H8zM13 8h3M13 11h3M8 14h8M8 17h5"/></svg></div><div><b>فاتورة ضريبية بـQR</b><span>متوافقة مع متطلبات هيئة الزكاة</span></div></div>
+    <div class="fact"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><circle cx="12" cy="12.5" r="3.2"/><path d="M9 6l1.2-2h3.6L15 6"/></svg></div><div><b>مطابقة بالذكاء الاصطناعي</b><span>صور أصنافك تتحول لمحرك تعرّف</span></div></div>
+    <div class="fact"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8c-2.5 2.5-2.5 5.5 0 8M12 8c2.5 2.5 2.5 5.5 0 8"/></svg></div><div><b>تعدد العملات</b><span>اشترِ باليوان وبِع بالريال</span></div></div>
+    <div class="fact"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5"/></svg></div><div><b>تجربة 14 يوماً مجاناً</b><span>كل المزايا · بلا بطاقة ائتمان</span></div></div>
+  </div></div>
+</div>
+
+<section id="features">
+  <div class="c">
+    <div class="st">كل ما تحتاجه <span class="g">في منصة واحدة</span></div>
+    <div class="ss">ميزات حقيقية تعمل اليوم — صُممت من رحم تجربة استيراد وتشغيل فعلية</div>
+    <div class="grid8">
+      <div class="f8"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><circle cx="12" cy="12.5" r="3.2"/><path d="M9 6l1.2-2h3.6L15 6"/></svg></div><b>مطابقة الأصناف بالصور</b><p>أضف صوراً لأصنافك ليستخدمها الذكاء الاصطناعي — صوّر أي منتج ويتعرف عليه فوراً من كتالوجك.</p></div>
+      <div class="f8"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></div><b>مراقبة تكلفة الشراء</b><p>تقارير تكشف تغيّر تكلفة كل صنف بين الفواتير والموردين — فتشتري بالسعر الصحيح دائماً.</p></div>
+      <div class="f8"><div class="ic"><svg viewBox="0 0 24 24"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></div><b>رحلة الشراء</b><p>رفيقك ومساعدك في كل وقت وأي مكان — وثّق جولات الموردين بالصور والأسعار وقارن العروض.</p></div>
+      <div class="f8"><div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 8h3v3H8zM13 8h3M13 11h3M8 14h8M8 17h5"/></svg></div><b>فواتير ZATCA</b><p>فاتورة ضريبية ومبسطة برمز QR متوافق مع الهيئة، وطباعة أنيقة جاهزة. <b>تنبيه:</b> الربط الإلكتروني المباشر مع منصة «فاتورة» بجميع مراحله غير جاهز حالياً وقيد التطوير.</p></div>
+      <div class="f8"><div class="ic"><svg viewBox="0 0 24 24"><path d="M21 8V6a2 2 0 00-2-2H5a2 2 0 00-2 2v2m18 0v10a2 2 0 01-2 2H5a2 2 0 01-2-2V8m18 0H3"/><path d="M8 13h5"/></svg></div><b>مخزون بتكلفة حقيقية</b><p>متوسط تكلفة متحرك، تسويات وصرف مخزني، وفروع ومخازن بلا حدود.</p></div>
+      <div class="f8"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8c-2.5 2.5-2.5 5.5 0 8M12 8c2.5 2.5 2.5 5.5 0 8"/></svg></div><b>تعدد العملات</b><p>مشتريات باليوان والدولار ومبيعات بالريال — التكاليف والتحويل يُحسبان تلقائياً.</p></div>
+      <div class="f8"><div class="ic"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 13l2 2 4-4"/></svg></div><b>نظام الطلبات والتنسيق</b><p>تابع طلبات عملائك من لحظة الطلب إلى التجهيز حتى تأكيد التسليم — بحالات ومراحل وصور إثبات.</p></div>
+      <div class="f8"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 17V5a1 1 0 011-1h9l5 5v8M4 17a2 2 0 002 2h12a2 2 0 002-2M4 17h16M9 13l2 2 4-4"/></svg></div><b>استيراد البيانات والصور</b><p>إكسل بلا حدود، وصور الأصناف بأربع طرق: الكاميرا، المعرض، استيراد جماعي باسم الملف (رقم الصنف)، أو قراءة الملصق داخل الصورة تلقائياً.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="c">
+    <div class="st">كيف تعمل <span class="g">المنصة؟</span></div>
+    <div class="ss">خمس خطوات من التسجيل حتى قرارات شراء أذكى</div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><b>سجّل مجاناً</b><p>حساب موثق بالجوال أو البريد في دقيقة.</p></div>
+      <div class="step"><div class="n">2</div><b>أضف أصنافك بالصور</b><p>استيراد إكسل + صور تُبنى عليها المطابقة الذكية.</p></div>
+      <div class="step"><div class="n">3</div><b>وثّق رحلة الشراء</b><p>صوّر عروض الموردين وطابقها مع كتالوجك.</p></div>
+      <div class="step"><div class="n">4</div><b>أصدر فواتيرك</b><p>مبيعات ومشتريات بفاتورة ZATCA بـQR.</p></div>
+      <div class="step"><div class="n">5</div><b>راقب وتحسّن</b><p>تقارير التكلفة والأرباح تقود قراراتك.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="c">
+  <div class="ai">
+    <div class="head"><span class="tag">AI · يعمل الآن</span><h2>الذكاء الاصطناعي في SmartV360</h2><p>ليست وعوداً — تقنيات تعمل اليوم من جوالك</p></div>
+    <div class="aigrid">
+      <div class="aic"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><circle cx="12" cy="12.5" r="3.2"/><path d="M9 6l1.2-2h3.6L15 6"/></svg></div><b>مطابقة المنتجات بالصور</b><p>صوّر المنتج في المعرض أو المخزن — يتعرف عليه النظام من صور أصنافك مع السعر وآخر شراء والحركة.</p></div>
+      <div class="aic"><div class="ic"><svg viewBox="0 0 24 24"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></div><b>رحلة الشراء الذكية</b><p>في جولات المعارض والموردين: وثّق كل عرض بصورة، والنظام يجمع ويقارن لك منتجاً بمنتج ومورداً بمورد.</p></div>
+      <div class="aic"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></div><b>تقارير مراقبة التكلفة</b><p>يرصد تغيّر تكلفة الشراء لكل صنف عبر الزمن والموردين — فتعرف متى ومِن مَن تشتري.</p></div>
+    </div>
+  </div>
+
+  <div class="trip">
+    <div>
+      <h2>رحلة الشراء — <span class="g">رفيقك ومساعدك في كل وقت وأي مكان</span></h2>
+      <p class="d">في معارض الجملة أو عند مورد محلي: افتح الجوال، صوّر المنتج والسعر، ودَع النظام يعمل.</p>
+      <ul>
+        <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>توثيق كل محل ومورد بصوره وأسعاره وملاحظاتك</li>
+        <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>مطابقة تلقائية بالذكاء الاصطناعي مع أصنافك الحالية</li>
+        <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>مقارنة العروض منتجاً بمنتج واختيار الأفضل بثقة</li>
+        <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>تقرير PDF جاهز للمراجعة والقرار قبل الدفع</li>
+      </ul>
+    </div>
+    <div class="tripcard">
+      <div class="tc-top"><span>🧳 رحلة شراء — اليوم 2</span><span>معرض الجملة · محل A-217</span></div>
+      <div class="tphoto"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><circle cx="12" cy="12.5" r="3.2"/><path d="M9 6l1.2-2h3.6L15 6"/></svg>التقط صورة المنتج والسعر</div>
+      <div class="match"><div class="thumb"></div><div><b>ITEM-001 · صنف تجريبي</b><span>آخر شراء ¥ 42 · متوفر 380</span></div><span class="pct">تطابق 92%</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="c" id="contact">
+  <div class="cta-band">
+    <div>
+      <h2>ابدأ رحلتك نحو تجارة <span class="y">أذكى</span> اليوم</h2>
+      <p>راسلنا لتفعيل اشتراكك أو للاستفسار — نرد عليك سريعاً</p>
+      <ul>
+        <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>بلا بطاقة ائتمان</li>
+        <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>بياناتك تبقى محفوظة</li>
+        <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>إلغاء في أي وقت</li>
+      </ul>
+    </div>
+    <a class="cta" href="mailto:support@smartv360.com?subject=اشتراك SmartV360">📧 support@smartv360.com</a>
+  </div>
+</div>
+
+<footer>
+  <div class="c">
+    <div class="fg">
+      <div><b>SmartV360</b>منصة ذكية لإدارة المشتريات والمبيعات والمخزون — فواتير ZATCA ومطابقة بالذكاء الاصطناعي.<br><br>support@smartv360.com</div>
+      <div><b>المنتج</b><a href="#features">المميزات</a><a href="pricing.html">الأسعار</a><a href="#how">كيف تعمل</a></div>
+      <div><b>الدعم</b><a href="mailto:support@smartv360.com">تواصل معنا</a></div>
+      <div><b>قانوني</b><a href="terms.html">الشروط والأحكام</a><a href="privacy.html">سياسة الخصوصية</a></div>
+    </div>
+    <div class="fcopy">© 2026 SmartV360 — جميع الحقوق محفوظة · نسخة تجريبية تحت التطوير · قريباً على Google Play وApp Store</div>
+  </div>
+</footer>
+
+</body>
+</html>
